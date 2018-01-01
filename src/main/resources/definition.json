@@ -1,0 +1,93 @@
+{
+  "name": "RMQExample",
+  "packageName": "com.zm.rmqexample",
+
+  "configuration": {
+    "channels": {
+      "test": "test",
+      "prod": "prod"
+    },
+    "hosts": {
+      "test": "localhost",
+      "prod": "localhost"
+    }
+  },
+
+  "api": {
+    "methods": [
+      {
+        "name": "getPerson",
+        "result": "Person",
+        "params": [
+          {
+            "name": "id",
+            "ref": "int"
+          }
+        ]
+      },
+      {
+        "name": "updatePerson",
+        "result": "Person",
+        "params": [
+          {
+            "name": "person",
+            "ref": "Person"
+          }
+        ],
+        "exceptions": [
+          "PersonNotFoundException"
+        ]
+      },
+      {
+        "name": "putPerson",
+        "result": "Person",
+        "params": [
+          {
+            "name": "person",
+            "ref": "Person"
+          }
+        ]
+      }
+    ]
+  },
+
+  "models": [
+    {
+      "name": "Person",
+      "properties": [
+        {
+          "name": "id",
+          "ref": "int"
+        },
+        {
+          "name": "firstName",
+          "ref": "String"
+        },
+        {
+          "name": "lastName",
+          "ref": "String"
+        }
+      ]
+    },
+    {
+      "name": "String",
+      "javaType": "String"
+    },
+    {
+      "name": "int",
+      "javaType": "int"
+    }
+  ],
+
+  "exceptions": [
+    {
+      "name": "PersonNotFoundException",
+      "properties": [
+        {
+          "name": "id",
+          "ref": "int"
+        }
+      ]
+    }
+  ]
+}

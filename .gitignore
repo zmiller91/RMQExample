@@ -1,0 +1,11 @@
+*.iml
+.idea/
+
+# Ignore the target output except rmq generated sources
+
+!target/
+target/*
+!target/generated-sources/
+
+target/generated-sources/*
+!target/generated-sources/rmqsplugin/
